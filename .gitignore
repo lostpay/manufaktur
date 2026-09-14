@@ -1,0 +1,10 @@
+# work data — never commit the source workbook or the CSVs rebuilt from it
+*.xlsx
+2025.csv
+2026.csv
+
+# design/plan docs stay local
+docs/
+
+__pycache__/
+.ruff_cache/

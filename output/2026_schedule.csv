@@ -1,0 +1,30 @@
+mesin,po_no,size,thickness,qty,start_day,end_day,event_type
+MESIN 1,PO 001,"3/4""",1.0,154.81,0.0,1.191,production
+MESIN 1,,"3/4""",,,1.191,1.316,reconfig
+MESIN 1,PO 002,"3/4""",0.8,15.3,1.316,1.434,production
+MESIN 1,PO 001,"3/4""",0.8,1101.78,1.434,9.909,production
+MESIN 2,PO 003,"1/2""",1.0,219.44,0.0,1.688,production
+MESIN 2,,"1/2""",,,1.688,1.813,reconfig
+MESIN 2,PO 001,"1/2""",0.8,516.62,1.813,5.787,production
+MESIN 2,,"5/8""",,,5.787,6.287,mold_change
+MESIN 2,PO 003,"5/8""",0.8,921.96,6.287,13.379,production
+MESIN 2,PO 001,"5/8""",0.8,2090.34,13.379,29.458,production
+MESIN 3,PO 001,"1 1/4""",0.8,428.3,0.0,4.283,production
+MESIN 3,,"1 1/4""",,,4.283,4.408,reconfig
+MESIN 3,PO 001,"1 1/4""",1.0,614.67,4.408,10.555,production
+MESIN 4,PO 001,"2""",1.0,171.93,0.0,1.719,production
+MESIN 4,,"1""",,,1.719,2.219,mold_change
+MESIN 4,,"1""",,,2.219,2.344,reconfig
+MESIN 4,PO 003,"1""",0.8,1428.99,2.344,16.634,production
+MESIN 4,,"1""",,,16.634,16.759,reconfig
+MESIN 4,PO 003,"1""",1.0,556.04,16.759,22.32,production
+MESIN 4,PO 001,"1""",1.0,1572.08,22.32,38.04,production
+MESIN 5,PO 004,"1 1/2""",1.0,831.37,0.0,8.314,production
+MESIN 5,PO 003,"1 1/2""",1.0,1094.11,8.314,19.255,production
+MESIN 5,PO 001,"1 1/2""",1.0,1425.12,19.255,33.506,production
+MESIN 5,,"1 1/2""",,,33.506,33.631,reconfig
+MESIN 5,PO 004,"1 1/2""",0.8,710.24,33.631,40.733,production
+MESIN 5,PO 003,"1 1/2""",0.8,973.99,40.733,50.473,production
+MESIN 5,PO 001,"1 1/2""",0.8,2645.7,50.473,76.93,production
+MESIN 6,PO 001,"1""",0.8,4534.4,0.0,45.344,production
+MESIN 7,PO 001,"2 1/2""",0.8,120.91,0.0,1.209,production

@@ -1,0 +1,50 @@
+mesin,po_no,size,thickness,qty,start_day,end_day,event_type
+MESIN 1,PO 036,"3/4""",1.0,4.9,0.0,0.038,production
+MESIN 1,PO 038,"3/4""",1.0,142.11,0.038,1.131,production
+MESIN 1,PO 001,"3/4""",1.0,372.02,1.131,3.993,production
+MESIN 1,,"3/4""",,,3.993,4.118,reconfig
+MESIN 1,PO 002,"3/4""",0.8,459.14,4.118,7.649,production
+MESIN 1,PO 001,"3/4""",0.8,918.27,7.649,14.713,production
+MESIN 2,PO 036,"1/2""",1.2,9.0,0.0,0.069,production
+MESIN 2,,"1/2""",,,0.069,0.194,reconfig
+MESIN 2,PO 036,"1/2""",1.0,6.0,0.194,0.24,production
+MESIN 2,PO 001,"1/2""",1.0,285.88,0.24,2.439,production
+MESIN 2,,"1/2""",,,2.439,2.564,reconfig
+MESIN 2,PO 038,"1/2""",0.8,49.0,2.564,2.941,production
+MESIN 2,PO 001,"1/2""",0.8,351.62,2.941,5.646,production
+MESIN 2,,"5/8""",,,5.646,6.146,mold_change
+MESIN 2,,"5/8""",,,6.146,6.271,reconfig
+MESIN 2,PO 036,"5/8""",1.0,8.0,6.271,6.333,production
+MESIN 2,PO 033,"5/8""",1.0,30.0,6.333,6.563,production
+MESIN 2,PO 038,"5/8""",1.0,48.07,6.563,6.933,production
+MESIN 2,,"5/8""",,,6.933,7.058,reconfig
+MESIN 2,PO 001,"5/8""",0.8,1384.27,7.058,17.706,production
+MESIN 3,PO 001,"1 1/4""",1.0,212.81,0.0,2.128,production
+MESIN 3,,"1 1/4""",,,2.128,2.253,reconfig
+MESIN 3,PO 001,"1 1/4""",0.8,405.19,2.253,6.305,production
+MESIN 4,PO 036,"2""",1.0,18.0,0.0,0.18,production
+MESIN 4,PO 001,"2""",1.0,137.55,0.18,1.556,production
+MESIN 4,PO 002,"2""",1.0,137.55,1.556,2.931,production
+MESIN 4,,"1""",,,2.931,3.431,mold_change
+MESIN 4,,"1""",,,3.431,3.556,reconfig
+MESIN 4,PO 001,"1""",1.2,230.52,3.556,5.861,production
+MESIN 4,,"1""",,,5.861,5.986,reconfig
+MESIN 4,PO 002,"1""",0.8,1700.68,5.986,22.993,production
+MESIN 4,,"1""",,,22.993,23.118,reconfig
+MESIN 4,PO 036,"1""",1.0,11.0,23.118,23.228,production
+MESIN 4,PO 001,"1""",1.0,2467.11,23.228,47.899,production
+MESIN 5,PO 036,"1 1/2""",1.2,1227.0,0.0,12.27,production
+MESIN 5,,"1 1/2""",,,12.27,12.395,reconfig
+MESIN 5,PO 002,"1 1/2""",0.8,224.32,12.395,14.638,production
+MESIN 5,PO 038,"1 1/2""",0.8,442.0,14.638,19.058,production
+MESIN 5,PO 001,"1 1/2""",0.8,1794.53,19.058,37.003,production
+MESIN 5,,"1 1/2""",,,37.003,37.128,reconfig
+MESIN 5,PO 036,"1 1/2""",1.0,29.0,37.128,37.418,production
+MESIN 5,PO 037,"1 1/2""",1.0,348.0,37.418,40.898,production
+MESIN 5,PO 002,"1 1/2""",1.0,360.75,40.898,44.506,production
+MESIN 5,PO 001,"1 1/2""",1.0,2164.5,44.506,66.151,production
+MESIN 6,PO 002,"1""",1.0,822.37,0.0,8.224,production
+MESIN 6,,"1""",,,8.224,8.349,reconfig
+MESIN 6,PO 001,"1""",0.8,4081.63,8.349,49.165,production
+MESIN 7,PO 002,"2 1/2""",0.8,66.72,0.0,0.667,production
+MESIN 7,PO 001,"2 1/2""",0.8,200.16,0.667,2.669,production
