@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block body %}
+<form class="noprint" method="get">{{ t('mode') }}:
+ {% for m in modes %}<label><input type="radio" name="mode" value="{{ m }}" {% if m == mode %}checked{% endif %} onchange="this.form.submit()"> {{ t('mode_' + m) }}</label> {% endfor %}</form>
+<div class="gantt">{{ gantt | safe }}</div>
+<h3>{{ t('deliveries') }}</h3>
+<table><tr><th>{{ t('delivery') }}</th><th>{{ t('day') }}</th><th>{{ t('cumulative_kg') }}</th></tr>
+{% for d in deliveries %}<tr><td>{{ d.delivery_no if d.delivery_no != 'leftover' else t('leftover') }}</td>
+ <td>{{ d.day }}</td><td>{{ d.cumulative_kg }}{% if d.delivery_no == 'leftover' %} ({{ d.batch_kg }} kg){% endif %}</td></tr>{% endfor %}</table>
+<h3>{{ t('nav_machines') }}</h3>
+<table>{% for m in machines %}<tr><td><a href="/machine/{{ m }}?mode={{ mode }}">{{ m }}</a></td>
+ <td>{{ t('machine_total', days='%.1f' % totals[m]) if totals[m] else t('idle') }}</td></tr>{% endfor %}</table>
+{% endblock %}

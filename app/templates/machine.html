@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block body %}
+<h2>{{ t('queue_title', machine=name) }} <span class="muted">({{ t('mode_' + mode) }})</span>
+ <button class="noprint" onclick="print()">{{ t('print') }}</button></h2>
+<table><tr><th>{{ t('seq') }}</th><th>{{ t('po') }}</th><th>{{ t('size') }}</th><th>{{ t('thickness') }}</th>
+ <th>{{ t('remaining_pcs') }}</th><th>{{ t('remaining_kg') }}</th><th>{{ t('start') }}</th><th>{{ t('end') }}</th><th class="noprint"></th></tr>
+{% set n = namespace(i=0) %}
+{% for e in rows %}<tr class="{{ e.event_type }}">
+ {% if e.event_type == 'production' %}{% set n.i = n.i + 1 %}
+ <td>{{ n.i }}</td><td>{{ e.po_no }}</td><td>{{ e.size }}</td><td>{{ e.thickness }}</td><td>{{ e.qty }}</td><td>{{ e.kg }}</td>
+ <td>{{ e.start_day }}</td><td>{{ e.end_day }}</td>
+ <td class="noprint"><form method="post" action="/machine/{{ name }}/log" style="display:inline">
+   <input type="hidden" name="order_id" value="{{ e.order_id }}"><input type="hidden" name="mode" value="{{ mode }}">
+   <input type="number" name="kg" step="0.1" min="0" max="{{ e.kg }}" value="{{ e.kg }}">
+   <button>{{ t('partial') }}</button></form></td>
+ {% else %}<td></td><td colspan="5"><i>{{ t(e.event_type) }} → {{ e.size }}</i></td><td>{{ e.start_day }}</td><td>{{ e.end_day }}</td><td></td>{% endif %}
+</tr>{% endfor %}</table>
+{% endblock %}
