@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block body %}
+<h2>{{ t('upload_title') }}</h2>
+{% if not based_on %}<p>{{ t('no_data') }}</p>{% endif %}
+<form method="post" action="/upload" enctype="multipart/form-data">
+ <label>{{ t('upload_file') }} <input type="file" name="file" accept=".xlsx" required></label>
+ <button>{{ t('upload_btn') }}</button></form>
+{% endblock %}

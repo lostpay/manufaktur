@@ -1,0 +1,18 @@
+<!doctype html><html lang="{{ lang }}"><head><meta charset="utf-8">
+<title>{{ t('app') }}</title>
+<style>
+ body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#fff;color:#222}
+ nav{display:flex;gap:16px;align-items:center;padding:10px 20px;background:#1f2a44;color:#fff}
+ nav a{color:#fff;text-decoration:none} nav .right{margin-left:auto}
+ main{padding:16px 20px} .muted{color:#666;font-size:12px}
+ table{border-collapse:collapse} td,th{padding:4px 10px;border-bottom:1px solid #ddd;text-align:left}
+ tr.mold_change td{background:#fde8e8} tr.reconfig td{background:#fff6d6}
+ .gantt{overflow-x:auto} input[type=number]{width:6em} .err{color:#b00}
+ @media print{nav,form,.noprint{display:none} main{padding:0}}
+</style></head><body>
+<nav><b>{{ t('app') }}</b>
+ <a href="/">{{ t('nav_dashboard') }}</a><a href="/upload">{{ t('nav_upload') }}</a><a href="/settings">{{ t('nav_settings') }}</a>
+ <span>{{ t('nav_machines') }}: {% for m in machines %}<a href="/machine/{{ m }}">{{ m.split(' ')[-1] }}</a> {% endfor %}</span>
+ <a class="right" href="/lang/{{ 'id' if lang == 'en' else 'en' }}">{{ t('lang_other') }}</a></nav>
+<main>{% if based_on %}<p class="muted">{{ based_on }}</p>{% endif %}{% block body %}{% endblock %}</main>
+</body></html>

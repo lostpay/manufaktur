@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block body %}
+<h2>{{ t('preview_title') }}</h2>
+{% if not sheets %}<p>{{ t('no_sheets') }}</p>{% else %}
+<form method="post" action="/upload/{{ upload_id }}/confirm">
+<table><tr><th></th><th>{{ t('sheet') }}</th><th>{{ t('rows') }}</th><th>{{ t('snapshot') }}</th></tr>
+{% for s in sheets %}<tr><td><input type="checkbox" name="sheets" value="{{ s.sheet }}" checked></td>
+ <td>{{ s.sheet }}</td><td>{{ s.n_rows }}</td><td>{{ s.snapshot_date or '—' }}</td></tr>{% endfor %}</table>
+{% if unknown %}<h3>{{ t('unknown_sizes') }}</h3>
+<table><tr><th>{{ t('size') }}</th><th></th><th>{{ t('machines_csv') }}</th><th>{{ t('rate') }}</th></tr>
+{% for size in unknown %}<tr>
+ <td>{{ size }}<input type="hidden" name="unk_size_{{ loop.index0 }}" value="{{ size }}"></td>
+ <td><label><input type="radio" name="unk_action_{{ loop.index0 }}" value="ignore" checked> {{ t('ignore') }}</label>
+     <label><input type="radio" name="unk_action_{{ loop.index0 }}" value="assign"> {{ t('import_this') }}</label></td>
+ <td><input name="unk_machines_{{ loop.index0 }}" placeholder="MESIN 3"></td>
+ <td><input type="number" name="unk_rate_{{ loop.index0 }}" step="1" min="1"></td></tr>{% endfor %}</table>{% endif %}
+<p><button>{{ t('confirm_btn') }}</button></p></form>{% endif %}
+{% endblock %}
