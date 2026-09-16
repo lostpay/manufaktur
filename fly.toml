@@ -1,0 +1,18 @@
+app = "manufaktur"
+primary_region = "sin"
+
+[build]
+
+[env]
+  DB_PATH = "/data/manufaktur.db"
+  UPLOAD_DIR = "/data/uploads"
+
+[[mounts]]
+  source = "manufaktur_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  min_machines_running = 1

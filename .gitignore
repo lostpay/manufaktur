@@ -8,3 +8,6 @@ docs/
 
 __pycache__/
 .ruff_cache/
+
+# runtime data (SQLite + uploaded workbooks)
+data/
