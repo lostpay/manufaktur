@@ -1,5 +1,8 @@
 """Run: python tests/test_engine.py"""
 import copy
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from app.engine import (DEFAULT_SETTINGS, make_job, assign_machines, order_machine,
                         machine_events, schedule, deliveries)
 
