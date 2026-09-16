@@ -3,7 +3,7 @@ with progress logging; settings; language toggle."""
 import os
 import uuid
 
-from fastapi import FastAPI, Request, UploadFile, Form
+from fastapi import FastAPI, HTTPException, Request, UploadFile, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
@@ -94,8 +94,11 @@ async def confirm(upload_id: str, request: Request):
     while f"unk_size_{i}" in form:                       # resolve unknown sizes first
         size, action = form[f"unk_size_{i}"], form.get(f"unk_action_{i}", "ignore")
         if action == "assign":
-            settings["sizes"][size] = {"machines": [m.strip() for m in form[f"unk_machines_{i}"].split(",") if m.strip()],
-                                       "rate": float(form[f"unk_rate_{i}"])}
+            machines = [m.strip() for m in form.get(f"unk_machines_{i}", "").split(",") if m.strip()]
+            rate = float(form.get(f"unk_rate_{i}") or 0)
+            if not machines or rate <= 0 or any(m not in settings["machines"] for m in machines):
+                raise HTTPException(400, f"{size}: machines {machines}, rate {rate}")
+            settings["sizes"][size] = {"machines": machines, "rate": rate}
         elif size not in settings["ignored_sizes"]:
             settings["ignored_sizes"].append(size)
         i += 1

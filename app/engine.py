@@ -34,7 +34,8 @@ MODES = {
 def make_job(order, settings):
     """Order (with remaining_kg) -> job dict, or None if it can't be scheduled."""
     size = order["size"]
-    if size in settings["ignored_sizes"] or size not in settings["sizes"] or order["remaining_kg"] <= 0:
+    if (size in settings["ignored_sizes"] or size not in settings["sizes"]
+            or order["remaining_kg"] <= 0 or order["berat_per_pcs"] <= 0):
         return None
     qty = order["remaining_kg"] / order["berat_per_pcs"]
     return {**order, "qty": qty, "kg": order["remaining_kg"], "days": qty / settings["sizes"][size]["rate"]}

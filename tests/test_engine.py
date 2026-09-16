@@ -29,6 +29,7 @@ def test_make_job_derives_qty_and_days_and_filters():
     assert make_job(order("PO 3", '1/2"', 0), S) is None             # nothing remaining
     s = copy.deepcopy(S); s["ignored_sizes"] = ['1/2"']
     assert make_job(order("PO 4", '1/2"', 10), s) is None            # explicitly ignored
+    assert make_job(order("PO 5", '1/2"', 10, berat_per_pcs=0), S) is None   # no weight per piece: qty undefined
 
 
 def test_fixed_sizes_go_to_their_machine():
